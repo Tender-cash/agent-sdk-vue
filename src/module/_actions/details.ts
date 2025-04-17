@@ -98,7 +98,6 @@ const usePaymentDetails = ({ nextScreen, setPageLoading }: { nextScreen:(stage:P
   };
 
   const triggerPaymentConfirm = (isCancelled?:boolean) => {
-    console.log('triggerPaymentConfirm: paymentDetails-->', paymentDetails.value, isCancelled);
     if (isCancelled) {
         // Handle cancellation logic (clear queue, maybe call cancel API if exists)
         Logger.debug("canceling-payment....");
