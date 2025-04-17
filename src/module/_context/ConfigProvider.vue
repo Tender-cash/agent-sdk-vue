@@ -1,5 +1,5 @@
 <template>
-  <div class="ta-mx-auto ta-flex ta-w-full ta-flex-col ta-gap-6 ta-bg-white ta-rounded-2xl ta-border ta-gap-4 sm:ta-max-w-[600px]">
+  <div class="ta-mx-auto ta-flex ta-w-full ta-flex-col ta-gap-6 ta-bg-white ta-rounded-2xl ta-border ta-gap-4 sm:!ta-w-[600px] ta-text-black">
     <TenderSpinner v-if="!isLoading" variant="tender" />
     <slot v-else />
   </div>
@@ -31,9 +31,6 @@ useConfigProvider({
 const isLoading = ref(false);
 
 provideToast({ timeout: 3000 });
-
-// The useConfigProvider call above already handles providing the context
-// const { useConfigProvider: _ } = useConfigProvider({...props.config, client: getAxiosInstance(), CONFIRM_INTERVAL: DEFAULT_CONFIRM_INTERVAL});
 
 setTimeout(() => (isLoading.value = true), 3000);
 </script> 

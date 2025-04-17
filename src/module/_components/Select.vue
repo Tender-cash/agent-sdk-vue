@@ -8,10 +8,10 @@
     >
         <button
             :class="[
-                'ta-flex ta-items-center ta-justify-between ta-rounded-lg ta-border ta-px-3 ta-py-2 ta-text-sm ta-text-black ta-w-full',
+                'ta-flex ta-items-center ta-justify-between ta-rounded-lg !ta-border ta-border-black/10 ta-px-3 ta-py-2 ta-text-sm ta-text-black ta-w-full',
                 triggerClassName,
                 disabled ? 'ta-cursor-not-allowed ta-opacity-50' : 'ta-cursor-pointer',
-                isOpen ? 'ta-bg-white-100' : 'ta-bg-white/10'
+                isOpen ? '!ta-bg-white' : '!ta-bg-white/10'
             ]"
             @click="toggleDropdown"
             :disabled="disabled"

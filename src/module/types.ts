@@ -6,9 +6,9 @@ import { AxiosInstance, AxiosRequestConfig, AxiosResponse, AxiosError } from "ax
 /* -------------------------------------------------------------------------- */
 /*                             Internal Dependency                            */
 /* -------------------------------------------------------------------------- */
-import partialIcon from "./_assets/icons/partial.png";
-import overpaymentIcon from "./_assets/icons/overpayment.png";
-import completedIcon from "./_assets/icons/completed.png";
+import partialIcon from "@/assets/icons/partial.png";
+import overpaymentIcon from "@/assets/icons/overpayment.png";
+import completedIcon from "@/assets/icons/completed.png";
 type IAny = any;
 
 interface ITheme extends Record<string, any> {
@@ -50,10 +50,11 @@ enum paymentStatusMap {
   "completed" = "complete",
   "pending" = "pending",
   "error" = "error",
+  "cancelled" = "cancelled",
 }
 
-type  PaymentTypeProps = "partial" | "complete" | "over" | "pending" | "error";
-type  PaymentStatusProps = "partial-payment" | "completed" | "overpayment" | "pending" | "error";
+type  PaymentTypeProps = "partial" | "complete" | "over" | "pending" | "error" | "cancelled";
+type  PaymentStatusProps = "partial-payment" | "completed" | "overpayment" | "pending" | "error" | "cancelled";
 type TenderEnvironments = "test" | "live";
 
 interface FormHeaderProps {
@@ -75,7 +76,7 @@ interface IPaymentData {
 }
 
 interface InfoDetailsProps {
-  type?: "error" | "success";
+  title?: string;
   message?: string;
   redirect?: string;
 }
@@ -96,14 +97,16 @@ enum PAYMENT_RESPONSES {
   complete = "",
   pending = "",
   error = "",
+  cancelled = "",
 };
 
-const PAYMENT_ICONS ={
+const PAYMENT_ICONS = {
   partial: partialIcon,
   over: overpaymentIcon,
   complete: completedIcon,
   pending: undefined,
   error: undefined,
+  cancelled: undefined,
 }
 
 interface paymentDetailsProps {

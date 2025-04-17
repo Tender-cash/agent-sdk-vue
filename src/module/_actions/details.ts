@@ -104,7 +104,7 @@ const usePaymentDetails = ({ nextScreen, setPageLoading }: { nextScreen:(stage:P
         confirmPaymentQueue.clearQueue();
         if (interval) clearInterval(interval); // Stop polling
         onEventResponse && onEventResponse({ status: "error", message: "user cancelled transaction", data: paymentDetails.value });
-        infoDetails.value = { type: "error", message: "user cancelled transaction" };
+        infoDetails.value = { title: "User cancelled transaction", message: "user cancelled transaction" };
         return nextScreen(PAYMENT_STAGE.INFO); // Don't proceed to CallConfirmPayment
     }
 

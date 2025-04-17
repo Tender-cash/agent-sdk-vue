@@ -1,6 +1,6 @@
 <template>
-  <div class="ta-mx-auto ta-flex ta-w-full ta-flex-col ta-gap-6 ta-bg-white ta-rounded-2xl ta-border-2 ta-gap-4">
-    <TenderSpinner v-if="agentSdkState.isPageLoading.value" />
+  <div class="ta-mx-auto ta-flex ta-w-full ta-flex-col ta-gap-6 ta-bg-white ta-rounded-2xl ta-border-2 ta-gap-4 ta-text-black ta-items-start">
+    <TenderSpinner v-if="agentSdkState.isPageLoading.value" variant="tender" />
     <template v-else>
       <Form
         v-if="agentSdkState.currentStage.value === PAYMENT_STAGE.FORM"

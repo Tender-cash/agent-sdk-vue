@@ -1,30 +1,29 @@
 <template>
     <div>
       <FormHeader
-        title="Information"
-        description="An Error Occurred"
+        :title="infoData?.title || 'Information'"
+        :description="infoData?.message || 'An Error Occurred'"
         :icon="tenderIcon as unknown as string"
       />
       
-      <div class="ta-border-t-1 ta-px-6 ta-my-4">
-        <div class="ta-flex ta-flex-col ta-items-center ta-gap-2 ta-bg-[#FAFAFA] ta-w-full ta-justify-between ta-p-4 ta-border-y-1 ta-border-[#EAECF0]">
-           <X class="ta-w-[80px] ta-h-[80px] ta-text-red-500" />
-          <p class="ta-text-xl ta-font-bold">{{ infoData?.message || 'An Error Occurred' }}</p>
-        </div>
+      <div class="ta-flex ta-flex-col ta-items-center ta-gap-2 ta-w-full ta-justify-center ta-p-4 ta-border-y-1 ta-min-h-[250px] ta-text-center">
+          <X :size="80" class="ta-text-red-500" />
+        <p class="ta-text-xl ta-text-secondary">{{ infoData?.message || 'An Error Occurred' }}</p>
       </div>
-  
-      <div class="ta-flex ta-gap-2 ta-justify-center ta-items-center ta-bg-[#FAFAFA] ta-p-6">
-        You will be redirected shortly
+
+      <div class="ta-flex ta-gap-2 ta-justify-start ta-items-center ta-bg-[#FAFAFA] ta-text-secondary ta-p-6">
+        <span><Spinner :size="16" /></span>
+        <span>You will be redirected shortly</span>
       </div>
     </div>
   </template>
   
   <script setup lang="ts">
-  import { FormHeader } from '../_components';
-  import tenderIcon from '../_assets/icons/tender.svg';
-  import { X } from "lucide-vue-next";
-  import type { InfoDetailsProps } from '../types';
   import { computed } from 'vue';
+  import { X } from "lucide-vue-next";
+  import { Spinner, FormHeader } from '../_components';
+  import tenderIcon from '@/assets/icons/tender.svg';
+  import type { InfoDetailsProps } from '../types';
   
   interface Props {
     data?: InfoDetailsProps;

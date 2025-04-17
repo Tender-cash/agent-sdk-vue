@@ -62,7 +62,7 @@
 
 <script setup lang="ts">
 import { Select, Button, Spinner, FormHeader } from '../_components';
-import tenderIcon from '../_assets/icons/tender.svg';
+import tenderIcon from '@/assets/icons/tender.svg';
 import type { Option } from '../types';
 import { computed } from 'vue';
 

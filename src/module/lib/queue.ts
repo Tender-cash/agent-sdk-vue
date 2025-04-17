@@ -7,6 +7,7 @@ import Logger from "./logger";
 class ApiRequestQueue {
   private queue: QueueItem[] = [];
   private processing = false;
+  private cancelled = false;
   private axios: AxiosInstance;
 
   constructor(){
@@ -15,7 +16,7 @@ class ApiRequestQueue {
 
   // processQueue
   private async processQueue(): Promise<void> {
-    if (this.processing || this.queue.length === 0) return;
+    if (this.processing || this.cancelled || this.queue.length === 0) return;
 
     this.processing = true;
 
@@ -91,9 +92,10 @@ class ApiRequestQueue {
   // ClearPendingQueues
   public clearQueue(){
     Logger.info("Clearing all requests in the queue...");
-    this.queue.forEach((item) => item.controller.abort("Request canceled due to queue clearing."));
+    this.queue.forEach((item) => this.cancelRequest(item.id));
     this.queue = [];
     this.processing = false;
+    this.cancelled = true;
   }
 }
 
