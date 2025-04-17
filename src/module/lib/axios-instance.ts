@@ -25,7 +25,6 @@ const setAxiosInstance = (config: ConfigContextType) => {
       request.headers["x-timestamp"] = timeStamp;
       request.headers["x-access-id"] = config.accessId;
       request.headers["x-request-id"] = requestId;
-      console.log('setAxiosInstance: request-->', { signature, timeStamp, requestId, config:{id:config.accessId, secret:config.accessSecret}});
       return request;
   });
 };

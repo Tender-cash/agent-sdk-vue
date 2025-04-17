@@ -16,7 +16,7 @@
         <label for="fiatCurrency">Fiat Currency:</label>
         <input id="fiatCurrency" v-model="fiatCurrency" type="text" placeholder="e.g., USD">
       </div>
-        <!-- Button to trigger the SDK -->
+      <!-- Button to trigger the SDK -->
       <button 
         @click="handleModalClick"
         :disabled="!(accessId && accessSecret && amount > 0 && fiatCurrency)"
@@ -68,18 +68,14 @@ function handleModalClick() {
 }
 
 function onEventResponse(response: onFinishResponse) {
-  console.log('SDK Event Received:', response)
   sdkResponse.value = response
 
   if (response.type === 'TENDER_CLOSE') {
-    console.log('SDK Closed by user')
     showModal.value = false // Hide on close
   } else if (response.type === 'TENDER_ERROR') {
-    console.error('SDK Error:', response.error)
     alert(`SDK Error: ${response.error?.message || 'Unknown error'}`)
     showModal.value = false // Hide on error
   } else if (response.type === 'TENDER_SUCCESS') {
-    console.log('SDK Success:', response.data)
     alert(`Transaction Successful! Data: ${JSON.stringify(response.data)}`)
     showModal.value = false // Hide on success
   }

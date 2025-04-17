@@ -48,7 +48,6 @@ const usePaymentDetails = ({ nextScreen, setPageLoading }: { nextScreen:(stage:P
         status: "pending",
       } as IPaymentData;
       paymentDetails.value = paymentResponse;
-      console.log('paymentDetails: paymentResponse-->', paymentDetails.value);
       isFetching.value = false;
       setPageLoading(false);
       nextScreen(PAYMENT_STAGE.DETAILS);
@@ -109,7 +108,6 @@ const usePaymentDetails = ({ nextScreen, setPageLoading }: { nextScreen:(stage:P
     }
 
     if (paymentDetails.value?.id) {
-        console.log('triggerPaymentConfirm: paymentDetails.value-->', paymentDetails.value);
         isFetching.value = true; // Set loading true only when making the foreground call
         CallConfirmPayment(paymentDetails.value.id, false);
     } else {

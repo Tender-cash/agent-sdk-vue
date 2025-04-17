@@ -30,7 +30,6 @@ const useConfig = () => {
   if (!config) {
     throw new Error('Config context not found. Please wrap your app with ConfigProvider.');
   }
-  console.log('useConfig: config-->', config);
   return config;
 };
 

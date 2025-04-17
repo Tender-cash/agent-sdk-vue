@@ -16,7 +16,6 @@ const useAgentSdkAction = () => {
   const configRef = useConfig();
   const currentStage = ref<PAYMENT_STAGE>(PAYMENT_STAGE.FORM);
   const isPageLoading = ref(true);
-  console.log('useAgentSdkAction: Initial isPageLoading:', isPageLoading.value);
   const chains = ref<Option[]>([]);
   const coins = ref<Option[]>([]);
   const selectedCoin = ref<string | null>(null);
@@ -59,7 +58,6 @@ const useAgentSdkAction = () => {
 
   const fetchCoins = async (chain: string) => {
     coinFetching.value = true;
-    console.log('fetchCoins: chain-->', chain);
     const response = await client?.get(`${URL_PATHS.CHAINS}/${chain}/currency`) as APIResponse<PaymentCoin[]>;
     if (response?.data?.data) {
       const coinsList = response.data.data;
