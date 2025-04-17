@@ -1,5 +1,5 @@
 <template>
-    <div class="ta-relative tx-flex ta-flex-col ta-px-6 ta-pb-1 ta-pt-4 ta-bg-[#FAFAFA] ta-border-b-2 ta-border-[#EAECF0] ta-rounded-t-2xl">
+    <div class="ta-relative tx-flex ta-flex-col ta-px-6 ta-pb-1 ta-pt-4 ta-bg-[#FAFAFA] ta-border-b-2 ta-border-[#EAECF0] ta-rounded-t-2xl ta-w-full">
         <div class="ta-flex ta-relative ta-w-full ta-flex-row">
             <div class="ta-w-3/4 ta-flex ta-flex-col">
                 <h3 class="ta-text-lg ta-font-bold">{{ title }}</h3>

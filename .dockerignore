@@ -1,0 +1,23 @@
+# Git files
+.git
+.gitignore
+
+# Node modules (will be installed within Docker)
+node_modules
+example/node_modules
+
+# Build output directories (except for the final copy in Dockerfile)
+dist
+example/dist
+
+# Local environment files
+.env*
+*.local
+
+# Editor/OS files
+.vscode
+.idea
+*.DS_Store
+
+# Workflow files
+.github

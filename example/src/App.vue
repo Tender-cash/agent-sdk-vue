@@ -25,8 +25,6 @@
         Initiate Transaction
       </button>
     </div>
-    <hr class="separator">
-
     <!-- Conditionally render the SDK component based on showModal and props -->
     <div v-if="showModal" class="sdk-container">
       <TenderAgentSdk 
@@ -38,6 +36,8 @@
         :on-event-response="onEventResponse"
       />
     </div>
+
+    <hr class="separator">
 
     <div v-if="sdkResponse" class="response-area">
       <strong>Last SDK Event:</strong>
@@ -131,7 +131,6 @@ select {
 .sdk-container {
   /* Add any specific styling for the SDK component container if needed */
   padding: 1rem;
-  border: 1px dashed #42b983;
   border-radius: 4px;
   min-height: 100px; /* Example minimum height */
   display: flex;
@@ -140,7 +139,7 @@ select {
 }
 
 .sdk-placeholder {
-  padding: 1rem;
+  /* padding: 1rem; */
   border: 1px dashed #ccc;
   border-radius: 4px;
   color: #666;
@@ -151,15 +150,16 @@ select {
 .response-area {
   margin-top: 1.5rem;
   padding: 1rem;
-  background-color: #eee;
+  background-color: #1a1a1a;
   border-radius: 4px;
-  border: 1px solid #ddd;
+  border: 1px dashed #42b983;
 }
 
 pre {
   white-space: pre-wrap;
   word-wrap: break-word;
-  background-color: #fff;
+  background-color: #1a1a1a;
+  color: #fff;
   padding: 0.5rem;
   border-radius: 4px;
   margin-top: 0.5rem;

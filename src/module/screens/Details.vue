@@ -196,7 +196,7 @@ const RenderFinishedDetails = defineComponent({
         ])
       ]),
       h(FormFooter, {}, [
-        isPartial ? h('div', { class: 'ta-flex ta-flex-row ta-w-full ta-items-center ta-gap-4' }, [
+        isPartial ? h('div', { class: 'ta-flex ta-flex-row ta-w-full ta-items-center ta-gap-4 ta-w-full' }, [
           h('span', [h(Spinner, { size: 16 })]),
           h('span', { class: 'ta-text-sm ta-text-secondary' }, 'Transaction is pending ...')
         ]) : h('span', { class: 'ta-text-sm ta-text-secondary' }, 'You will be redirected shortly')

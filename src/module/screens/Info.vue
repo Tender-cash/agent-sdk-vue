@@ -1,5 +1,4 @@
 <template>
-    <div>
       <FormHeader
         :title="infoData?.title || 'Information'"
         :description="infoData?.message || 'An Error Occurred'"
@@ -11,11 +10,10 @@
         <p class="ta-text-xl ta-text-secondary">{{ infoData?.message || 'An Error Occurred' }}</p>
       </div>
 
-      <div class="ta-flex ta-gap-2 ta-justify-start ta-items-center ta-bg-[#FAFAFA] ta-text-secondary ta-p-6">
+      <div class="ta-flex ta-gap-2 ta-justify-start ta-items-center ta-bg-[#FAFAFA] ta-text-secondary ta-p-6 ta-w-full">
         <span><Spinner :size="16" /></span>
         <span>You will be redirected shortly</span>
       </div>
-    </div>
   </template>
   
   <script setup lang="ts">

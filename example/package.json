@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "repository": "git://github.com/tender-cash/agent-sdk-vue.git",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
