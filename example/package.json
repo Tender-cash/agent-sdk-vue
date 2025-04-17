@@ -1,0 +1,30 @@
+{
+  "name": "agent-sdk-vue-example",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "repository": "git://github.com/tender-cash/agent-sdk-vue.git",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@tender-cash/agent-sdk-vue": "0.1.1",
+    "vue": "^3.4.31"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.22.0",
+    "@types/node": "^20.14.10",
+    "@vitejs/plugin-vue": "^5.1.0",
+    "@vue/tsconfig": "^0.5.1",
+    "eslint": "^9.22.0",
+    "eslint-plugin-vue": "^9.27.0",
+    "globals": "^16.0.0",
+    "typescript": "~5.7.2",
+    "typescript-eslint": "^8.26.1",
+    "vite": "^6.3.1",
+    "vue-tsc": "^2.0.26"
+  }
+}
