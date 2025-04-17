@@ -66,7 +66,7 @@ const usePaymentDetails = ({ nextScreen, setPageLoading }: { nextScreen:(stage:P
         coin: payResponse.data.data.chainId?.coin 
       }
       paymentDetails.value = {...paymentDetails.value, ...paymentResponse} as IPaymentData;
-      onEventResponse && onEventResponse({ status: payResponse.data.data.status as PaymentStatusProps, message: "user cancelled transaction", data: paymentDetails.value });
+      onEventResponse && onEventResponse({ status: payResponse.data.data.status as PaymentStatusProps, message: payResponse.data.message, data: paymentDetails.value });
       if ([PAYMENT_STATUS.OVER, PAYMENT_STATUS.COMPLETE].includes(payResponse.data.data.status as any) && interval){
         confirmPaymentQueue.clearQueue();
         clearInterval(interval);
