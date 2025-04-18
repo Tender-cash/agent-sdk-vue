@@ -63,7 +63,8 @@ const usePaymentDetails = ({ nextScreen, setPageLoading }: { nextScreen:(stage:P
         status: payResponse.data.data.status as PaymentStatusProps,
         amountPaid: payResponse.data.data.amountReceived,
         balance: payResponse.data.data.balanceRequired,
-        coin: payResponse.data.data.chainId?.coin 
+        excess: (parseFloat(payResponse.data.data.amountReceived || "0") - parseFloat(payResponse.data.data?.amount || "0")).toFixed(4),
+        coin: payResponse.data.data.currency?.name
       }
       paymentDetails.value = {...paymentDetails.value, ...paymentResponse} as IPaymentData;
       onEventResponse && onEventResponse({ status: payResponse.data.data.status as PaymentStatusProps, message: payResponse.data.message, data: paymentDetails.value });

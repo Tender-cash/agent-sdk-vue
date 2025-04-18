@@ -28,6 +28,7 @@
         :status="agentSdkState.paymentDetails.value.status"
         :cancel="agentSdkState.cancelPayment"
         :confirm="agentSdkState.confirmPayment"
+        :excess="agentSdkState.paymentDetails.value.excess"
       />
       <Info
         v-else

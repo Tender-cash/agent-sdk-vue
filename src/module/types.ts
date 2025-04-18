@@ -72,6 +72,7 @@ interface IPaymentData {
   address?: string;
   amountPaid?: string;
   balance?: string;
+  excess?: string;
   status?: PaymentStatusProps;
 }
 
@@ -145,7 +146,9 @@ interface newPaymentResponse {
   },
   coinAmount: string;
   contractAddress: string,
-  currency:string;
+  currency:{
+    name:string;
+  };
   fee: number;
   feeSent: boolean;
   feeUSD: number;

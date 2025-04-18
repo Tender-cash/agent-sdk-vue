@@ -20,6 +20,7 @@
     :loading="props.loading"
     :status="props.status"
     :balance="props.balance"
+    :excess="props.excess"
   />
 </template>
 
@@ -39,6 +40,7 @@ interface Props {
   loading: boolean;
   status: PaymentStatusProps;
   balance: number;
+  excess?: string;
   confirm?: () => void;
   cancel?: () => void;
 }
@@ -132,6 +134,7 @@ const RenderFinishedDetails = defineComponent({
     coin: { type: String, required: true },
     status: { type: String as PropType<PaymentStatusProps>, default: PAYMENT_STATUS.PENDING },
     balance: { type: Number, required: true },
+    excess: { type: String, required: true },
   },
   setup(props) {
     const statusKey = props.status;
@@ -186,7 +189,7 @@ const RenderFinishedDetails = defineComponent({
           h('div', { class: 'ta-flex ta-flex-col ta-p-4 ta-justify-center ta-items-center ta-w-1/2' }, [
             h('p', { class: 'ta-text-[12px] ta-text-secondary' }, paymentType === 'over' ? 'EXCESS' : 'REMAINING'),
             h('div', { class: 'ta-flex ta-flex-row ta-gap-2' }, [
-              h('span', { class: 'ta-text-[38px] leading-[48px] ta-font-bold' }, props.balance),
+              h('span', { class: 'ta-text-[38px] leading-[48px] ta-font-bold' }, paymentType === 'over' ? props.excess : props.balance),
               h('span', { class: 'ta-text-xl ta-mt-auto ta-mb-4 ta-text-secondary ta-font-bold' }, props.coin.toUpperCase())
             ])
           ])
