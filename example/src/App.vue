@@ -1,7 +1,7 @@
 <template>
   <div class="app-container">
     <div v-if="!showModal">
-      <h1 class="app-">Tender-Cash Agent Vue SDK example</h1>
+      <h1 class="app-title">Tender Agent SDK Example</h1>
 
       <div class="input-grid">
         <label for="accessId">Access ID:</label>
@@ -164,7 +164,8 @@ pre {
 h1 {
   color: #42b983; /* Vue green */
   text-align: center;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 2.5rem;
 }
 
 p {

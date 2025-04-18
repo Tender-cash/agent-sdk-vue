@@ -40,7 +40,7 @@ interface Props {
   loading: boolean;
   status: PaymentStatusProps;
   balance: number;
-  excess?: string;
+  excess: string;
   confirm?: () => void;
   cancel?: () => void;
 }
