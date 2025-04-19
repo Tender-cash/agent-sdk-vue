@@ -154,7 +154,7 @@ const RenderFinishedDetails = defineComponent({
     const responseText = paymentType ? PAYMENT_RESPONSES[paymentType] : '';
     const completed = statusKey === PAYMENT_STATUS.COMPLETE;
     const isPartial = statusKey === PAYMENT_STATUS.PARTIAL;
-    console.log("props==>", props, isPartial, completed, paymentType);
+    
     return () => h('div', [
       h(FormHeader, {
         title: `${sentenceCase(paymentType || 'payment')} Payment received`,
