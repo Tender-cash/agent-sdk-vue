@@ -12,6 +12,17 @@
     :confirm="props.confirm"
   />
   <RenderFinishedDetails
+    v-else-if="props.status === PAYMENT_STATUS.PARTIAL"
+    :address="String(props.address)"
+    :amount="Number(props.amount)"
+    :amount-paid="Number(props.amountPaid)"
+    :coin="String(props.coin)"
+    :loading="props.loading"
+    :status="props.status"
+    :balance="props.balance"
+    :excess="props.excess"
+  />
+  <RenderFinishedDetails
     v-else
     :address="String(props.address)"
     :amount="Number(props.amount)"
@@ -143,7 +154,7 @@ const RenderFinishedDetails = defineComponent({
     const responseText = paymentType ? PAYMENT_RESPONSES[paymentType] : '';
     const completed = statusKey === PAYMENT_STATUS.COMPLETE;
     const isPartial = statusKey === PAYMENT_STATUS.PARTIAL;
-
+    console.log("props==>", props, isPartial, completed, paymentType);
     return () => h('div', [
       h(FormHeader, {
         title: `${sentenceCase(paymentType || 'payment')} Payment received`,

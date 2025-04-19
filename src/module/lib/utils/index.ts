@@ -19,7 +19,8 @@ function cn(...inputs: ClassValue[]): string {
 
 // Define TENDER_URLS only once (remove export here)
 const TENDER_URLS = {
-  test: "https://stagapi.tender.cash",
+  test: "http://localhost:9090",
+  // test: "https://stagapi.tender.cash",
   live: "https://secureapi.tender.cash",
 }
 
