@@ -36,7 +36,8 @@
 </template>
 
 <script setup lang="ts">
-import { Copy, QrCode } from 'lucide-vue-next';
+import { Copy } from 'lucide-vue-next';
+import QrcodeVue from 'qrcode.vue'
 import { useClipboard } from '@vueuse/core';
 import { Button, Spinner, FormHeader, FormFooter } from '../_components';
 import { PAYMENT_STATUS, PAYMENT_RESPONSES, PAYMENT_ICONS, paymentStatusMap, type PaymentStatusProps, type PaymentTypeProps } from '../types';
@@ -87,7 +88,7 @@ const RenderPendingDetails = defineComponent({
         ]),
         h('div', { class: 'ta-flex ta-flex-row ta-bg-[#FAFAFA] ta-w-max-full ta-justify-between ta-p-4 ta-border ta-border-[#E6E6E6] ta-border-dashed ta-rounded-2xl ta-text-wrap ta-gap-4' }, [
           h('div', { class: 'ta-flex ta-flex-row ta-w-1/4' }, [
-            h(QrCode, { size: 140 })
+            h(QrcodeVue, { size: 140, value: props.address })
           ]),
           h('div', { class: 'ta-flex ta-flex-col ta-text-pretty ta-w-2/4 ta-my-auto' }, [
             h('h3', { class: 'ta-text-base ta-text-secondary' }, 'USDC Deposit Address'),

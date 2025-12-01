@@ -106,6 +106,7 @@
     "dependencies": {
         "@headlessui/vue": "^1.7.18",
         "@vueuse/core": "^10.9.0",
+        "qrcode.vue": "^3.6.0",
         "axios": "^1.7.7",
         "class-variance-authority": "^0.7.0",
         "clsx": "^2.1.1",
